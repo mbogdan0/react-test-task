@@ -1,5 +1,6 @@
 import React, {createContext, useContext, useState, useEffect} from 'react';
 import {connect} from 'socket.io-client';
+import { toast } from 'react-toastify';
 
 const DataContext = createContext();
 
@@ -19,7 +20,9 @@ const DataProvider = ({children}) => {
     }, []);
 
     useEffect(() => {
-
+        if (lastDataValue > threshold) {
+            toast(`Value ${lastDataValue} is greater than your threshold (${threshold})`);
+        }
     }, [lastDataValue, threshold]);
 
 

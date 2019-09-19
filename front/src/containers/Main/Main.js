@@ -6,10 +6,7 @@ import Threshold from "../../components/Threshold/Threshold";
 
 
 const Main = () => {
-
     const {data} = useDataContext();
-
-
 
     return (
         <>

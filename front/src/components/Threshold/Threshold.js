@@ -3,7 +3,6 @@ import {useDataContext} from "../../containers/DataProvider/DataProvider";
 
 const Threshold = () => {
     const {threshold, setThreshold} = useDataContext();
-
     const [input, setInput] = useState('');
 
     const handleClick = () => {
