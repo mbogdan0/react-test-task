@@ -1,14 +1,19 @@
 import React from 'react';
 import {useDataContext} from "../DataProvider/DataProvider";
-
+import {BarChartBlock} from "../../components/BarChart";
 
 
 const Main = () => {
 
     const {data, connected, threshold, setThreshold} = useDataContext();
 
+
+
     return (
-        <div>{JSON.stringify(data)}</div>
+        <div>
+            <BarChartBlock data={data} />
+
+        </div>
     );
 };
 
