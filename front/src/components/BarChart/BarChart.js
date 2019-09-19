@@ -2,8 +2,8 @@ import {Bar} from 'react-chartjs-2';
 import React from 'react';
 
 const BarChart = ({labels, dataSet}) => {
-    const WIDTH = 500;
-    const HEIGHT = 350;
+    const WIDTH = 600;
+    const HEIGHT = 400;
 
     const options = {
         legend: {

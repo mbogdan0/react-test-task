@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import BarChart from "./BarChart";
+import {BarChart} from "./index";
+
 
 
 export const BarChartBlock = ({data}) => {
@@ -19,7 +20,6 @@ export const BarChartBlock = ({data}) => {
             }
             return all;
         }, [0, 0, 0]);
-        console.log(out);
         setBars(out);
     }, [data]);
 

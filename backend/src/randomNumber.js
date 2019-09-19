@@ -2,7 +2,7 @@ var MIN_RANDOM_NUMBER = -100;
 var MAX_RANDOM_NUMBER = 100;
 
 var MIN_DELAY = 0;
-var MAX_DELAY = 1500;
+var MAX_DELAY = 10000;
 
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
