@@ -15,3 +15,9 @@ code {
 .main-chart-block {
   margin: 10px;
 }
+
+.threshold-block {
+  margin: 10px;
+  padding: 10px;
+  background: #f0f0f0;
+}

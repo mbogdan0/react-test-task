@@ -1,10 +1,11 @@
-import React, {createContext, useContext, useState, useEffect, useMemo} from 'react';
+import React, {createContext, useContext, useState, useEffect} from 'react';
 import {connect} from 'socket.io-client';
 
 const DataContext = createContext();
 
 const DataProvider = ({children}) => {
     const [data, setData] = useState([]);
+    const [lastDataValue, setLastDataValue] = useState(null);
     const [connected, setConnected] = useState(false);
     const [threshold, setThreshold] = useState(25);
 
@@ -13,9 +14,14 @@ const DataProvider = ({children}) => {
         connection.on('connect', () => setConnected(true));
         connection.on('data', (obj) => {
             setData(prev => [...prev, obj]);
+            setLastDataValue(obj.value);
         });
-
     }, []);
+
+    useEffect(() => {
+
+    }, [lastDataValue, threshold]);
+
 
     const pass = {data, connected, threshold, setThreshold};
 

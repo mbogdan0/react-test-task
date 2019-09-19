@@ -2,17 +2,19 @@ import React from 'react';
 import {useDataContext} from "../DataProvider/DataProvider";
 import {BarChartBlock} from "../../components/BarChart";
 import LineChartBlock from "../../components/LineChart/LineChartBlock";
+import Threshold from "../../components/Threshold/Threshold";
 
 
 const Main = () => {
 
-    const {data, connected, threshold, setThreshold} = useDataContext();
+    const {data} = useDataContext();
 
 
 
     return (
-        <div>
-            Socket is connected: {JSON.stringify(connected)}
+        <>
+            <Threshold />
+
             <div className='main-chart-block'>
                 <BarChartBlock data={data} />
             </div>
@@ -20,9 +22,7 @@ const Main = () => {
                 <LineChartBlock data={data} />
             </div>
 
-
-
-        </div>
+        </>
     );
 };
 
